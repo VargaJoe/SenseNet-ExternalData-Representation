@@ -1,0 +1,7 @@
+﻿<ContentType name="SyncFileApplication" parentType="Application" handler="SenseNet.ExternalDataRepresentation.SyncFileApplication" xmlns="http://schemas.sensenet.com/SenseNet/ContentRepository/ContentTypeDefinition">
+  <DisplayName>Sync File</DisplayName>
+  <Description></Description>
+  <Icon>Application</Icon>
+  <Fields>
+  </Fields>
+</ContentType>

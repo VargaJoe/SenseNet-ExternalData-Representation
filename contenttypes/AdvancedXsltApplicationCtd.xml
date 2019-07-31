@@ -1,0 +1,146 @@
+﻿<ContentType name="AdvancedXsltApplication" parentType="XsltApplication" handler="SenseNet.ExternalDataRepresentation.AdvancedXsltApplication" xmlns="http://schemas.sensenet.com/SenseNet/ContentRepository/ContentTypeDefinition">
+  <DisplayName>AdvancedXsltApplication</DisplayName>
+  <Description>Xslt rendering application</Description>
+  <Icon>File</Icon>
+  <Fields>
+    <Field name="BindTarget" type="Choice">
+      <DisplayName>BindTarget</DisplayName>
+      <Description></Description>
+      <Configuration>
+        <AllowMultiple>false</AllowMultiple>
+        <AllowExtraValue>false</AllowExtraValue>
+        <Options>
+          <Option value="Unselected">Unselected</Option>
+          <Option value="CurrentContent" selected='true'>CurrentContent</Option>
+          <Option value="CurrentSite">CurrentSite</Option>
+          <Option value="CurrentPage">CurrentPage</Option>
+          <Option value="CurrentUser">CurrentUser</Option>
+          <Option value="CurrentStartPage">CurrentStartPage</Option>
+          <Option value="CustomRoot">CustomRoot</Option>
+          <Option value="CurrentWorkspace">CurrentWorkspace</Option>
+          <Option value="Breadcrumb">Breadcrumb</Option>
+          <Option value="CurrentList">CurrentList</Option>
+        </Options>
+      </Configuration>
+    </Field>
+    <Field name="CustomRootPath" type="ShortText">
+      <DisplayName>CustomRootPath</DisplayName>
+      <Description></Description>
+      <Icon>field.gif</Icon>
+    </Field>
+    <Field name="AncestorIndex" type="Integer">
+      <DisplayName>AncestorIndex</DisplayName>
+      <Description></Description>
+      <Configuration>
+        <DefaultValue>0</DefaultValue>
+      </Configuration>
+    </Field>
+    <Field name="RelativeContentPath" type="ShortText">
+      <DisplayName>RelativeContentPath</DisplayName>
+      <Description></Description>
+      <Icon>field.gif</Icon>
+    </Field>
+
+    <Field name="ChildrenSetting" type="Choice">
+      <DisplayName>ChildrenSetting</DisplayName>
+      <Description></Description>
+      <Configuration>
+        <AllowMultiple>false</AllowMultiple>
+        <AllowExtraValue>false</AllowExtraValue>
+        <Options>
+          <Option value="None">None</Option>
+          <Option value="WithChildren" selected='true'>WithChildren</Option>
+          <Option value="AllChildren">AllChildren</Option>
+        </Options>
+      </Configuration>
+    </Field>
+
+    <Field name="WithChildren" type="Boolean">
+      <DisplayName>$Ctd-XsltApplication,WithChildren-DisplayName</DisplayName>
+      <Description>$Ctd-XsltApplication,WithChildren-Description</Description>
+      <Icon>field.gif</Icon>
+      <Configuration>
+        <VisibleBrowse>Hide</VisibleBrowse>
+        <VisibleEdit>Hide</VisibleEdit>
+        <VisibleNew>Hide</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="CustomQueryFilter" type="LongText">
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+
+    <Field name="ItemCount" type="Integer">
+      <DisplayName>Elemszám</DisplayName>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <!--<Field name="SerializeFields" type="ShortText">
+      <DisplayName>SerializeFields</DisplayName>
+      <Description>Kiajánlások XML-be kigenerált Fieldjei, vesszővel elválasztva.</Description>
+      <Icon>field.gif</Icon>
+      <Configuration>
+        <Compulsory>false</Compulsory>
+      </Configuration>
+    </Field>-->
+
+    <!--<Field name="SerializeScenario" type="ShortText">
+      <DisplayName>SerializeScenario</DisplayName>
+      <Description>Kiajánlások által referált tartalmak XML-be kigenerált Action-jei Scenario alapján.</Description>
+      <Icon>field.gif</Icon>
+      <Configuration>
+        <Compulsory>false</Compulsory>
+      </Configuration>
+    </Field>-->
+
+
+    <Field name="UseOutputSettings" type="Boolean">
+      <DisplayName>UseOutputSettings</DisplayName>
+      <Description>XSLT beállításainak (xsl:output) használata transzformáláskor.</Description>
+      <Icon>field.gif</Icon>
+      <Configuration>
+        <Compulsory>false</Compulsory>
+      </Configuration>
+    </Field>
+
+    <Field name="ConformanceLevel" type="Choice">
+      <DisplayName>ConformanceLevel</DisplayName>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+        <AllowMultiple>false</AllowMultiple>
+        <AllowExtraValue>false</AllowExtraValue>
+        <Options>
+          <Option>Auto</Option>
+          <Option>Fragment</Option>
+          <Option>Document</Option>
+        </Options>
+        <DefaultValue>Auto</DefaultValue>
+      </Configuration>
+    </Field>
+
+    <Field name="Renderer" type="Reference">
+      <DisplayName>Renderer</DisplayName>
+      <Configuration>
+        <AllowMultiple>false</AllowMultiple>
+        <SelectionRoot>
+          <Path>/Root</Path>
+        </SelectionRoot>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+  </Fields>
+</ContentType>

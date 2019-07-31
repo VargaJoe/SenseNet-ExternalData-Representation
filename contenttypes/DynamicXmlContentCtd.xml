@@ -1,0 +1,186 @@
+﻿<ContentType name="DynamicXmlContent" parentType="File" handler="SenseNet.ExternalDataRepresentation.ContentHandlers.DynamicXmlContent" xmlns="http://schemas.sensenet.com/SenseNet/ContentRepository/ContentTypeDefinition">
+  <DisplayName>Dynamic Xml</DisplayName>
+  <Description></Description>
+  <Icon>Application</Icon>
+  <Fields>
+    <Field name="Hidden" type="Boolean">
+      <DisplayName>Rejtett</DisplayName>
+      <Description>Nem jelenik meg menuben.</Description>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+    <Field name="CustomUrl" type="ShortText">
+      <DisplayName>CustomUrl</DisplayName>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+    <Field name="InnerNode" type="Reference">
+      <DisplayName>InnerNode</DisplayName>
+      <Configuration>
+        <AllowMultiple>false</AllowMultiple>
+        <SelectionRoot>
+          <Path>/Root</Path>
+        </SelectionRoot>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="IsCacheable" type="Boolean">
+      <DisplayName>Cache</DisplayName>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="IsPersistable" type="Boolean">
+      <DisplayName>Binary perzisztáció</DisplayName>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="IsErrorRelevant" type="Boolean">
+      <DisplayName>Releváns Hiba</DisplayName>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+
+
+    <Field name="Renderer" type="Reference">
+      <DisplayName>Renderer</DisplayName>
+      <Configuration>
+        <AllowMultiple>false</AllowMultiple>
+        <SelectionRoot>
+          <Path>/Root</Path>
+        </SelectionRoot>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+    <Field name="Binary" type="Binary">
+      <DisplayName>Binary</DisplayName>
+      <Description>The binary content of the document</Description>
+      <Configuration>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+        <IsText>true</IsText>
+      </Configuration>
+    </Field>
+    <Field name="XmlUpdateInterval" type="Integer">
+      <DisplayName>XmlUpdateInterval</DisplayName>
+      <Configuration>
+        <DateTimeMode>DateAndTime</DateTimeMode>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="XmlLastUpdate" type="DateTime">
+      <DisplayName>LastXmlUpdate</DisplayName>
+      <Configuration>
+        <DateTimeMode>DateAndTime</DateTimeMode>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="XmlLastSyncDate" type="DateTime">
+      <DisplayName>XmlLastSyncDate</DisplayName>
+      <Configuration>
+        <DateTimeMode>DateAndTime</DateTimeMode>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="TechnicalUser" type="Reference">
+      <DisplayName>TechnicalUser</DisplayName>
+      <Configuration>
+        <AllowMultiple>false</AllowMultiple>
+        <SelectionRoot>
+          <Path>/Root/IMS</Path>
+        </SelectionRoot>
+        <VisibleBrowse>Show</VisibleBrowse>
+        <VisibleEdit>Show</VisibleEdit>
+        <VisibleNew>Show</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <Field name="ResponseEncoding" type="ShortText">
+      <DisplayName>Response encoding</DisplayName>
+      <Description>
+        Sets the text encoding to use
+        Default value: UTF8
+      </Description>
+      <Icon>field.gif</Icon>
+      <Configuration>
+        <Compulsory>false</Compulsory>
+        <MaxLength>60</MaxLength>
+        <DefaultValue>utf-8</DefaultValue>
+        <VisibleBrowse>Advanced</VisibleBrowse>
+        <VisibleEdit>Advanced</VisibleEdit>
+        <VisibleNew>Advanced</VisibleNew>
+      </Configuration>
+    </Field>
+    <Field name="CacheControl" type="Choice">
+      <DisplayName>Cache-Control</DisplayName>
+      <Description>The response is generated with the selected Cache-control headers.</Description>
+      <Configuration>
+        <VisibleBrowse>Advanced</VisibleBrowse>
+        <VisibleEdit>Advanced</VisibleEdit>
+        <VisibleNew>Advanced</VisibleNew>
+        <AllowMultiple>false</AllowMultiple>
+        <AllowExtraValue>false</AllowExtraValue>
+        <Options>
+          <Option>Nondefined</Option>
+          <Option>NoCache</Option>
+          <Option>Private</Option>
+          <Option>Public</Option>
+          <Option>Server</Option>
+          <Option>ServerAndNoCache</Option>
+          <Option>ServerAndPrivate</Option>
+        </Options>
+        <DefaultValue>Nondefined</DefaultValue>
+      </Configuration>
+    </Field>
+    <Field name="MaxAge" type="ShortText">
+      <DisplayName>Max-age</DisplayName>
+      <Description>An integer value in seconds for Cache-control: maxage=x header to be sent out</Description>
+      <Configuration>
+        <VisibleBrowse>Advanced</VisibleBrowse>
+        <VisibleEdit>Advanced</VisibleEdit>
+        <VisibleNew>Advanced</VisibleNew>
+      </Configuration>
+    </Field>
+
+    <!--<Field name="InnerText" type="LongText">
+        <DisplayName>InnerText</DisplayName>
+        <Configuration>
+          <VisibleBrowse>Hide</VisibleBrowse>
+          <VisibleEdit>Hide</VisibleEdit>
+          <VisibleNew>Hide</VisibleNew>
+        </Configuration>
+      </Field>-->
+  </Fields>
+</ContentType>
